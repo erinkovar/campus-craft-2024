@@ -1,4 +1,1 @@
-export const Footer = () => {
-  return <footer className="profile-footer"></footer>
-
-}
+export const Footer = () => <footer className="profile-footer"></footer>

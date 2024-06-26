@@ -39,14 +39,20 @@ export const ProfileGroups = ({ loading, profileData }) => {
     <section id="profile-groups">
       <h2 class="page-heading-2">Groups</h2>
       <ul class="profile-group-results fade-in">
-        {groups.map((group, index) => (
-          <li class="profile-group-results-item" key={index}>
-            <div class="profile-group-results-card content-card skeleton-card">
-              <div class="skeleton-img loading"></div>
-              <div class="skeleton-block loading">
-                {JSON.stringify(group, null, 2)}
+        {groups.map((group) => (
+          <li class="profile-group-results-item" key={group.id}>
+            <a
+              class="profile-group-results-card content-card fade-in"
+              href={group.href}
+            >
+              <div class="profile-group-avatar">
+                <img src={group.image} />
               </div>
-            </div>
+              <div class="profile-group-content">
+                <p class="page-paragraph">{group.name}</p>
+              </div>
+            </a>
+            {/* <pre>{JSON.stringify(group, null, 2)}</pre> */}
           </li>
         ))}
       </ul>
